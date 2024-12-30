@@ -27,7 +27,6 @@ class Operation:
         self.duration = duration
 
     def __repr__(self):
-        #return f"Operation: {self.name} ({self.duration}): {self.description}"
         return f"Operation: {self.name} ({self.duration})"
 
 

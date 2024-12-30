@@ -1,0 +1,96 @@
+name: Creamed Brussels Sprouts, Two Ways
+suggested_unit_time: 30 min
+
+ingredient butter
+    name: butter
+    volume: 2 tbsp
+
+ingredient shallots
+    name: shallots
+    quantity: 2
+
+ingredient bay_leaf
+    name: bay leaf
+    quantity: 1
+
+ingredient thyme
+    name: fresh thyme
+    quantity: 1 sprig
+
+ingredient cream
+    name: cream or half and half
+    volume: 1 cup
+
+ingredient salt
+    name: salt
+
+ingredient pepper
+    name: pepper
+    
+ingredient brussels_sprouts
+    name: brussels sprouts
+    weight: 1 pound
+
+ingredient nutmeg
+    name: nutmeg
+
+step chop_shallots(shallots:all) -> [chopped_shallots]
+    description:
+        Finely chop shallots.
+    time: 3 min
+    equipment:
+        knife: lock_duration
+        cutting_board: lock_duration
+
+ingredient chopped_shallots
+    name: finely chopped shallots
+
+step chop_sprouts(brussels_sprouts:all) -> [chopped_sprouts]
+    description:
+        Trim and halve brussels sprouts.
+    time: 6 min
+    equipment:
+        knife: lock_duration
+        cutting_board: lock_duration
+
+ingredient chopped_sprouts
+    name: trimmed and chopped brussels sprouts
+
+step heat_butter(butter:all) -> [melted_butter]
+    description:
+        Put the butter in a medium pot over medium heat until butter is melted.
+    time: 4 min
+    equipment:
+        medium_pot: lock_on
+
+step cook_shallots(melted_butter:all, chopped_shallots:all) -> [cooked_shallots]
+    description:
+        Add shallots to pot and cook until translucent.
+    time: 2 min
+    equipment:
+        medium_pot: lock_duration
+
+step season_shallots(bay_leaf:all,
+                     thyme:all,
+                     cream:all,
+                     salt:1 sprinkle,
+                     pepper:1 sprinkle) -> [seasoned_shallots]
+    description:
+        Add the bay leaf, thyme, cream, and a good sprinkling of salt and pepper.
+        Bring to a bubble.
+    time: 4 min
+    equipment:
+        medium_pot: lock_duration
+
+step cook_sprouts(seasoned_shallots:all, chopped_sprouts:all) -> [cooked_sprouts]
+    description:
+        Add chopped sprouts to seasoned shallots. Cover and cook until sprouts are tender.
+    time: 20 min
+    equipment:
+        medium_pot: lock_duration
+
+step season_sprouts(cooked_sprouts:all, nutmeg:all, salt:taste, pepper:taste) -> [creamed_sprouts]
+    description: Stir in nutmeg and taste. Add salt and pepper as necessary.
+    time: 1 min
+    equipment:
+        medium_pot: lock_off
